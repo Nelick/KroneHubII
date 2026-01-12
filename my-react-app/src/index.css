@@ -1,0 +1,223 @@
+/* Tokyo Night Storm for React (Vite-like index.css) */
+
+:root {
+    /* Fonts */
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Inter,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        "Liberation Sans",
+        sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    /* Theme tokens (Tokyo Night Storm inspired) */
+    --bg: #24283b;
+    --bg-elev: #1f2335;
+    --fg: #c0caf5;
+    --fg-dim: #a9b1d6;
+    --muted: #565f89;
+
+    --border: rgba(169, 177, 214, 0.18);
+
+    --blue: #7aa2f7;
+    --cyan: #7dcfff;
+    --teal: #73daca;
+    --purple: #bb9af7;
+    --pink: #f7768e;
+    --orange: #ff9e64;
+    --green: #9ece6a;
+
+    --shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+
+    color-scheme: dark;
+    color: var(--fg);
+    background-color: var(--bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Nice selection color */
+::selection {
+    background: rgba(125, 207, 255, 0.25);
+}
+
+/* Links */
+a {
+    font-weight: 600;
+    color: var(--cyan);
+    text-decoration: none;
+    transition:
+        color 0.15s ease,
+        opacity 0.15s ease;
+}
+a:hover {
+    color: var(--purple);
+    opacity: 0.95;
+}
+
+/* Base layout */
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+
+    /* keep your centered layout but with a subtle gradient */
+    display: flex;
+    place-items: center;
+
+    background:
+        radial-gradient(
+            900px 500px at 15% 10%,
+            rgba(122, 162, 247, 0.18),
+            transparent 60%
+        ),
+        radial-gradient(
+            700px 450px at 85% 20%,
+            rgba(187, 154, 247, 0.14),
+            transparent 55%
+        ),
+        radial-gradient(
+            900px 600px at 50% 100%,
+            rgba(115, 218, 202, 0.1),
+            transparent 60%
+        ),
+        var(--bg);
+
+    color: var(--fg);
+}
+
+/* Headings */
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+    margin: 0.2em 0 0.4em;
+}
+
+/* Optional: make default text nicer */
+p,
+span,
+li {
+    color: var(--fg-dim);
+}
+
+/* Buttons */
+button {
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 0.65em 1.15em;
+    margin: 5px;
+
+    font-size: 1em;
+    font-weight: 600;
+    font-family: inherit;
+
+    color: var(--fg);
+    background: linear-gradient(
+        180deg,
+        rgba(31, 35, 53, 0.75),
+        rgba(31, 35, 53, 0.45)
+    );
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+
+    cursor: pointer;
+    transition:
+        transform 0.08s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+button:hover {
+    border-color: rgba(125, 207, 255, 0.45);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+button:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 3px rgba(125, 207, 255, 0.25),
+        0 0 0 1px rgba(125, 207, 255, 0.35),
+        0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Inputs (bonus: often needed in React projects) */
+input,
+textarea,
+select {
+    color: var(--fg);
+    background: rgba(31, 35, 53, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.6em 0.85em;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: rgba(122, 162, 247, 0.55);
+    box-shadow: 0 0 0 3px rgba(122, 162, 247, 0.2);
+}
+
+/* If you want to keep a light-mode fallback, keep it subtle (still Tokyo-ish) */
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --bg: #d5d6db;
+        --bg-elev: #ffffff;
+        --fg: #1a1b26;
+        --fg-dim: #2f334d;
+        --muted: #4c4f6b;
+        --border: rgba(26, 27, 38, 0.12);
+    }
+
+    body {
+        background:
+            radial-gradient(
+                900px 500px at 15% 10%,
+                rgba(122, 162, 247, 0.2),
+                transparent 60%
+            ),
+            radial-gradient(
+                700px 450px at 85% 20%,
+                rgba(187, 154, 247, 0.16),
+                transparent 55%
+            ),
+            radial-gradient(
+                900px 600px at 50% 100%,
+                rgba(115, 218, 202, 0.12),
+                transparent 60%
+            ),
+            var(--bg);
+    }
+
+    button {
+        background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.85),
+            rgba(255, 255, 255, 0.65)
+        );
+        color: var(--fg);
+    }
+}
