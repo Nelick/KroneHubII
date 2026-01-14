@@ -8,6 +8,9 @@ function Myinputs() {
 function MyinputsII() {
   return <button>Register</button>;
 }
+function Mybullshit() {
+  return <h1>Hello world</h1>;
+}
 
 const App = () => {
   return (
@@ -15,6 +18,7 @@ const App = () => {
       <h1>Krone Hub</h1>
       <Myinputs />
       <MyinputsII />
+      <Mybullshit />
     </div>
   );
 };
