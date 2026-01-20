@@ -3,10 +3,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-<<<<<<< HEAD
-=======
+
 import Image from "next/image";
->>>>>>> origin/UI
 
 // Define navigation menu items with labels and their corresponding routes
 const navItems = [
@@ -44,9 +42,9 @@ export default function Navbar() {
           {/* Brand section - Logo and app name */}
           <Link href="/" className="flex items-center gap-3">
             {/* Brand icon placeholder */}
-<<<<<<< HEAD
+
             <div className="h-10 w-10 rounded-2xl border border-border/50 bg-card/70 shadow-sm" />
-=======
+
             <div className="h-10 w-10 overflow-hidden rounded-2xl border border-border/50 bg-card/70 shadow-sm">
               <Image
                 src="/logo.png"
@@ -58,7 +56,6 @@ export default function Navbar() {
               />
             </div>
 
->>>>>>> origin/UI
             <div className="leading-tight">
               <p className="text-base font-semibold text-text">KroneHub</p>
               <p className="text-xs text-muted">Hotel internal dashboard</p>
